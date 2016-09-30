@@ -1,0 +1,247 @@
+<!doctype html>
+
+<title>CSS Videos</title>
+
+<meta charset=utf-8>
+<meta content="initial-scale=1, minimum-scale=1, width=device-width"
+      name=viewport>
+
+<style>
+  html,
+  body {
+    background: black;
+    height: 100%;
+    width: 100%
+  }
+
+  body {
+    margin: 0;
+    position: relative
+  }
+
+  @-webkit-keyframes blink {
+    0%, 2%, 4.2%, 6.2%, 8.4% {
+      opacity: 0
+    }
+
+    2.1%, 4.1%, 6.3%, 8.3% {
+      opacity: 1
+    }
+  }
+
+  @keyframes blink {
+    0%, 2%, 4.2%, 6.2%, 8.4% {
+      opacity: 0
+    }
+
+    2.1%, 4.1%, 6.3%, 8.3% {
+      opacity: 1
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0%, 80% {
+      opacity: 0
+    }
+
+    90% {
+      opacity: 1
+    }
+  }
+
+  @keyframes fadeIn {
+    0%, 80% {
+      opacity: 0
+    }
+
+    90% {
+      opacity: 1
+    }
+  }
+
+  @-webkit-keyframes shapeInto {
+    0%, 10% {
+      border-radius: 0;
+      height: 8.33%;
+      width: 69.79%
+    }
+
+    70% {
+      border-radius: 30px
+    }
+
+    80%, to {
+      border-radius: 13%/6.5%;
+      height: 72.68%;
+      width: 19.79%
+    }
+  }
+
+  @keyframes shapeInto {
+    0%, 10% {
+      border-radius: 0;
+      height: 8.33%;
+      width: 69.79%
+    }
+
+    70% {
+      border-radius: 30px
+    }
+
+    80%, to {
+      border-radius: 13%/6.5%;
+      height: 72.68%;
+      width: 19.79%
+    }
+  }
+
+  @-webkit-keyframes bounce {
+    25%, 75% {
+      -webkit-transform: translateY(-10%);
+              transform: translateY(-10%)
+    }
+
+    50% {
+      -webkit-transform: translateY(10%);
+              transform: translateY(10%)
+    }
+  }
+
+  @keyframes bounce {
+    25%, 75% {
+      -webkit-transform: translateY(-10%);
+              transform: translateY(-10%)
+    }
+
+    50% {
+      -webkit-transform: translateY(10%);
+              transform: translateY(10%)
+    }
+  }
+
+  .center {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .screen {
+    background: white;
+    padding-top: 56.25%;
+    width: 100%
+  }
+
+  .date {
+    -webkit-animation: 30s fadeIn;
+    animation: 30s fadeIn;
+    color: #7a797a;
+    font-size: 50px;
+    font: 2.7vw Montserrat, sans-serif;
+    left: 20.83%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+
+  .shape {
+    -webkit-animation: 30s shapeInto linear;
+    animation: 30s shapeInto linear;
+    border: 2px solid #b1afb1;
+    border-radius: 13%/6.5%;
+    height: 72.68%;
+    width: 19.79%
+  }
+
+    .caret {
+      -webkit-animation: 30s;
+      animation: blink 30s;
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+      border-left: 2px solid #403f41;
+      height: 44.4%;
+      margin-left: 1.26%;
+      opacity: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+  .logo {
+    -webkit-animation: 30s fadeIn;
+    animation: 30s fadeIn;
+    width: 100%
+  }
+
+  .circle {
+    -webkit-animation: bounce 1.6s ease-in-out 4;
+    animation: bounce 1.6s ease-in-out 4;
+    border-radius: 50%;
+    padding-top: 1.145%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.145%
+  }
+
+    .first-circle {
+      -webkit-animation-delay: 24.09s;
+      animation-delay: 24.09s;
+      background: #4285f4;
+      left: 68.75%
+    }
+
+    .second-circle {
+      -webkit-animation-delay: 24.18s;
+      animation-delay: 24.18s;
+      background: #ea4335;
+      left: 70.83%
+    }
+
+    .third-circle {
+      -webkit-animation-delay: 24.27s;
+      animation-delay: 24.27s;
+      background: #fbbc05;
+      left: 72.91%
+    }
+
+    .fourth-circle {
+      -webkit-animation-delay: 24.36s;
+      animation-delay: 24.36s;
+      background: #34a853;
+      left: 75%
+    }
+</style>
+
+<div class="screen center">
+  <div class=date>Oct. 4</div>
+
+  <div class="shape center">
+    <div class=caret></div>
+  </div>
+
+  <div class=logo>
+    <span class="circle first-circle"></span>
+    <span class="circle second-circle"></span>
+    <span class="circle third-circle"></span>
+    <span class="circle fourth-circle"></span>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var iframe = document.createElement('iframe')
+    var link = document.createElement('link')
+
+    iframe.frameborder = 0
+    iframe.height = 0
+    iframe.src = 'https://www.youtube.com/embed/aNnCtmyujLA?autoplay=1'
+    iframe.width = 0
+
+    link.rel = "stylesheet"
+    link.href = "https://fonts.googleapis.com/css?family=Montserrat&text=Oct.4"
+
+    document.getElementsByTagName("body")[0].appendChild(iframe)
+    document.getElementsByTagName("head")[0].appendChild(link)
+  })()
+</script>
